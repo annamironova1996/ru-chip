@@ -1,4 +1,27 @@
 $(document).ready(function () {
+    $('.seo-btn').on('click', function () {
+        let seoContent = $('.seo-content');
+        let seoBlock = $('.seo');
+        let button = $(this);
+
+        if (!seoContent.hasClass('bg')) {
+            $('html, body')
+                .stop(true)
+                .animate(
+                    {
+                        scrollTop: seoBlock.offset().top - 120,
+                    },
+                    300
+                );
+
+            seoContent.addClass('bg');
+            button.text('Развернуть');
+        } else {
+            seoContent.removeClass('bg');
+            button.text('Скрыть');
+        }
+    });
+
     let flag = true;
 
     function setActiveCardImage() {
@@ -365,6 +388,36 @@ $(document).ready(function () {
                     slidesToShow: 1.02,
                     infinite: true,
                     variableWidth: false,
+                },
+            },
+        ],
+    });
+
+    $('.blog-cards-slider').slick({
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        variableWidth: false,
+        centerMode: false,
+        focusOnSelect: false,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1148,
+                settings: {
+                    slidesToShow: 2.1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 546,
+                settings: {
+                    slidesToShow: 1.1,
+                    slidesToScroll: 1,
                 },
             },
         ],
