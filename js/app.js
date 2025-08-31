@@ -1,0 +1,1 @@
+BX.namespace("Kdelo"),BX.Kdelo.Utils={isFunction:e=>"function"==typeof e||"function"==typeof window[e],readyDOM(e){"loading"!==document.readyState?e():document.addEventListener("DOMContentLoaded",e)}};
